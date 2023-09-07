@@ -3,21 +3,19 @@ from sys import argv
 
 
 def main():
-    enumerated = enumerate(argv)
-    cnt(enumerated)
-    for count, string in enumerated:
-        if count > 0:
-            print(f"{count}: {string}")
-
-
-def cnt(argument):
     length = len(argv) - 1
     if length == 1:
-        print(f"{length} argument:")
-    elif length == 0:
-        print(f"{length} arguments.")
+        print("{} argument".format(length), end="")
     else:
-        print(f"{length} arguments:")
+        print("{} arguments".format(length), end="")
+    if length == 0:
+        print(".")
+    else:
+        print(":")
+        enumerated = enumerate(argv)
+        for count, string in enumerated:
+            if count > 0:
+                print("{}: {}".format(count, string))
 
 
 if __name__ == "__main__":
