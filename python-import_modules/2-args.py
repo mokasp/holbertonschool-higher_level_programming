@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import sys
+from sys import argv
 
 
 def main():
-    enumerated = enumerate(sys.argv)
+    enumerated = enumerate(argv)
     cnt(enumerated)
     for count, string in enumerated:
         if count > 0:
@@ -11,14 +11,13 @@ def main():
 
 
 def cnt(argument):
-    length = len(sys.argv) - 1
-    print(f"{length} argument", end="")
-    if length != 1:
-        print("s", end="")
-    if length == 0:
-        print(".")
+    length = len(argv) - 1
+    if length == 1:
+        print(f"{length} argument:")
+    elif length == 0:
+        print(f"{length} arguments.")
     else:
-        print(":")
+        print(f"{length} arguments:")
 
 
 if __name__ == "__main__":
