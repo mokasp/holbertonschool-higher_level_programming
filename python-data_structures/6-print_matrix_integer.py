@@ -8,7 +8,8 @@ def print_matrix_integer(matrix=[[]]):
             if i < length:
                 print("{:d}".format(item), end=" ")
             else:
-                print("{:d}".format(item))
+                print("{:d}".format(item), end="")
+        print("")
 
 
 if __name__ == "__print_matrix_integer__":
