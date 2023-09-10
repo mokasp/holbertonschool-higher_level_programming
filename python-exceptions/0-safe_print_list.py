@@ -11,5 +11,5 @@ def safe_print_list(my_list=[], x=0):
     return printed
 
 
-if __name__ == "_safe_print_list__":
+if __name__ == "__safe_print_list__":
     safe_print_list()
