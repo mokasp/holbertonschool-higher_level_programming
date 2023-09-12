@@ -6,3 +6,7 @@ import hidden_4 as mod
 for i in dir(mod):
     if i[1] != "_":
         print("{}".format(i))
+
+
+if __name__ != "__main__":
+    exit()
