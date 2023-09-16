@@ -1,8 +1,8 @@
 #!/bin/usr/python3
-""" this module contains a class Square """
+""" This module contains a class Square. """
 
 
 class Square:
-    """ this Class represents an empty Square """
+    """ This Class represents an empty Square. """
 
     pass
