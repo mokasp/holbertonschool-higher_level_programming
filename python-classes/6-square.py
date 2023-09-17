@@ -50,7 +50,7 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
-    
+
     @property
     def position(self):
         """ returns private attribute position of Square """
@@ -61,7 +61,7 @@ class Square:
     def position(self, value):
         """ sets new value for private attribute position of Square """
 
-        if type(value) is not tuple:
+        if type(value) is not tuple or value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
