@@ -48,13 +48,16 @@ class Rectangle:
     def __str__(self):
         """ returns string representation of the Rectangle """
         string = ""
-        for col in range(self.height):
-            for row in range(self.width + 1):
-                if row == self.width and col < self.height - 1:
-                    string += "\n"
-                elif row < self.width:
-                    string += "#"
-        return string
+        if self.width == 0 or self.height == 0:
+            return string
+        else:
+            for col in range(self.height):
+                for row in range(self.width + 1):
+                    if row == self.width and col < self.height - 1:
+                        string += "\n"
+                    elif row < self.width:
+                        string += "#"
+            return string
 
     @property
     def width(self):
