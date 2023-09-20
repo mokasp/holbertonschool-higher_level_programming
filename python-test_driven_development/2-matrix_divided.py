@@ -10,6 +10,7 @@ def matrix_divided(matrix, div):
     """
     divides matrix by a given number
     """
+    tooLong = "matrix must be a matrix (list of lists) of integers/floats"
     if len(set(map(len, matrix))) not in (0, 1):
         raise TypeError("Each row of the matrix must have the same size")
     newMatrix = []
@@ -17,14 +18,12 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     for List in matrix:
         if type(List) is not list:
-            raise TypeError("matrix must be a matrix (list of lists) \
-                            of integers/floats")
+            raise TypeError(tooLong)
         else:
             newList = []
             for num in List:
                 if type(num) is not int:
-                    raise TypeError("matrix must be a matrix (list of lists) \
-                                    of integers/floats")
+                    raise TypeError(tooLong)
                 newNum = int(num / div)
                 newList.append(newNum)
         newMatrix.append(newList)
