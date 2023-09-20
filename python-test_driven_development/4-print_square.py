@@ -14,6 +14,8 @@ def print_square(size):
         raise TypeError("size must be an integer")
     elif size < 0:
         raise ValueError("size must be >= 0")
+    elif size == 0:
+        print("", end="")
     else:
         for col in range(size):
             for row in range(size + 1):
