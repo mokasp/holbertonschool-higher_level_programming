@@ -24,7 +24,7 @@ def matrix_divided(matrix, div):
             for num in List:
                 if type(num) is not int:
                     raise TypeError(tooLong)
-                newNum = int(num / div)
+                newNum = round(num / (div), 2)
                 newList.append(newNum)
         newMatrix.append(newList)
     return newMatrix
