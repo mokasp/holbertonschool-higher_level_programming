@@ -9,6 +9,9 @@ class BaseGeometry():
     ---------------
     area : returns area of instance
     """
+    def __init__(self):
+        """ initialize """
+        pass
 
     def area(self):
         """ returns area of an instance """
