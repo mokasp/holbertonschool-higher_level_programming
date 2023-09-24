@@ -14,4 +14,9 @@ class BaseGeometry():
 
     def area(self):
         """ returns area of an instance """
-        raise Exception("area() is not implemented")
+        raise Exception("area() is not implemeted")
+
+    def integer_validator(self, name, value):
+        """ Instance Method that validates whether a value is a positive \
+        integer """
+        
