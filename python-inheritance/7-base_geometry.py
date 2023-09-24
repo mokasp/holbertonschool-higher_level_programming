@@ -9,9 +9,6 @@ class BaseGeometry():
     ---------------
     area : returns area of instance
     """
-    def __init__(self):
-        """ initialize """
-
     def area(self):
         """ returns area of an instance """
         raise Exception("area() is not implemented")
