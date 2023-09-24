@@ -1,6 +1,8 @@
+"""
 ==================================
 doctesting for 7-base_geometry
 ==================================
+"""
 
 
 IMPORT AND ASSIGN CLASS
@@ -15,7 +17,7 @@ METHODS
     Traceback (most recent call last):
     ...
     Exception: area() is not implemented
-    
+
 :: INTEGER_VALIDATOR
     >>> bg.integer_validator("my_int", 12)
     >>> bg.integer_validator()
