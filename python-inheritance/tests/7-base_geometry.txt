@@ -26,3 +26,7 @@ TypeError: float must be an integer
 Traceback (most recent call last):
 ...
 TypeError: tuple must be an integer
+>>> bg.integer_validator("dict", {"key": "value"})
+Traceback (most recent call last):
+...
+TypeError: dict must be an integer
