@@ -3,20 +3,20 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 
-:: AREA ::
+""" AREA """
 
-:: CORRECT INPUT ::
+""" CORRECT INPUT """
 >>> print(bg.area())
 Traceback (most recent call last):
 ...
 Exception: area() is not implemented
 
-:: INTEGER_VALIDATOR ::
+""" INTEGER_VALIDATOR """
 
-:: CORRECT INPUT ::
+""" CORRECT INPUT """
 >>> bg.integer_validator("my_int", 12)
 
-:: ARGUMENT COUNT ::
+""" ARGUMENT COUNT """
 >>> bg.integer_validator()
 Traceback (most recent call last):
 ...
@@ -32,7 +32,7 @@ Traceback (most recent call last):
 ...
 TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
 
-:: INCORRECT INPUT ::
+""" INCORRECT INPUT """
 
 >>> bg.integer_validator("my_neg_int", -12)
 Traceback (most recent call last):
