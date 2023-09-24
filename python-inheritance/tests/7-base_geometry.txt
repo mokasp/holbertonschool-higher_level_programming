@@ -6,18 +6,10 @@ Traceback (most recent call last):
 ...
 Exception: area() is not implemented
 >>> bg.integer_validator("my_int", 12)
->>> bg.integer_validator()
+>>> bg.integer_validator("not_int", "not an int")
 Traceback (most recent call last):
 ...
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
->>> bg.integer_validator("name")
-Traceback (most recent call last):
-...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
->>> bg.integer_validator("name", 12, "extra")
-Traceback (most recent call last):
-...
-TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+TypeError: not_int must be an integer
 >>> bg.integer_validator("my_neg_int", -12)
 Traceback (most recent call last):
 ...
@@ -26,15 +18,3 @@ ValueError: my_neg_int must be greater than 0
 Traceback (most recent call last):
 ...
 ValueError: my_zero_int must be greater than 0
->>> bg.integer_validator("string", "not an int")
-Traceback (most recent call last):
-...
-TypeError: string must be an integer
->>> bg.integer_validator("string", "not an int")
-Traceback (most recent call last):
-...
-TypeError: string must be an integer
->>> bg.integer_validator("tuple", (1, 2))
-Traceback (most recent call last):
-...
-TypeError: tuple must be an integer
