@@ -10,6 +10,9 @@ def read_file(filename=""):
         filename : string
             a string containing name of a textfile
     """
-    with open(filename, "r", encoding="utf-8") as f:
-        read_data = f.read()
-    print(read_data)
+    if filename == "":
+        pass
+    else:
+        with open(filename, "r", encoding="utf-8") as f:
+            read_data = f.read()
+        print(read_data)
