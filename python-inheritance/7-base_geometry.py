@@ -15,7 +15,14 @@ class BaseGeometry():
 
     def integer_validator(self, name, value):
         """ Instance Method that validates whether a value is a positive \
-        integer """
+        integer 
+        
+        parameters
+        ----------
+        name : string
+            name of value
+        value : integer
+            positive integer """
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
