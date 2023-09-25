@@ -1,4 +1,5 @@
-General
+# Python - Input/Output
+this project covers the builtin functions Python offers that allow reading, writing to, appending, and closing files. 
 Why Python programming is awesome
 How to open a file
 How to write text in a file
