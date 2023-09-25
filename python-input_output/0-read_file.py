@@ -10,6 +10,6 @@ def read_file(filename=""):
         filename : string
             a string containing name of a textfile
     """
-    with open(filename) as f:
+    with open(filename, encoding="utf-8") as f:
         read_data = f.read()
     print("{}".format(read_data))
