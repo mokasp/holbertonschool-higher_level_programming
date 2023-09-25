@@ -11,4 +11,6 @@ def read_file(filename=""):
             a string containing name of a textfile
     """
     with open(filename, "r", encoding="utf-8") as f:
-        print(f.read())
+        read_file = f.read()
+    if f.closed:
+        print(read_file)
