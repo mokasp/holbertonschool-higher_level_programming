@@ -9,11 +9,16 @@ True
 True
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
->>> my_list = []
->>> my_list.append(1)
->>> my_list.append(4)
->>> my_list.append(2)
->>> print(my_list)
+>>> a_list = MyList()
+>>> a_list.append(1)
+>>> a_list.append(4)
+>>> a_list.append(2)
+>>> print(a_list)
 [1, 4, 2]
->>> my_list.print_sorted()
+>>> a_list.print_sorted()
 [1, 2, 4]
+>>> b_list = MyList([-1, -4, -2])
+>>> print(b_list)
+[-1, -4, -2]
+>>> b_list.print_sorted(b_list)
+[-4, -2, -1]
