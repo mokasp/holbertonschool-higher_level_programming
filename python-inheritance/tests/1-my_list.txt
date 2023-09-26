@@ -13,8 +13,12 @@ True
 >>> a_list.append(1)
 >>> a_list.append(4)
 >>> a_list.append(2)
+>>> print(a_list)
+[1, 4, 2]
 >>> a_list.print_sorted()
 [1, 2, 4]
 >>> b_list = MyList([-1, -4, -2])
->>> b_list.print_sorted(b_list)
+>>> print(b_list)
+[-1, -4, -2]
+>>> b_list.print_sorted()
 [-4, -2, -1]
