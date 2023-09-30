@@ -113,9 +113,10 @@ class Rectangle(Base):
             positive integer """
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
+        elif value <= 0:
             raise ValueError("{} must be > 0".format(name))
-        return True
+        else:
+            return True
 
     def xy_validator(self, name, value):
         """ Instance Method that validates whether a value is a positive \
@@ -129,6 +130,7 @@ class Rectangle(Base):
             positive integer """
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
-        if value < 0:
+        elif value < 0:
             raise ValueError("{} must be <= 0".format(name))
-        return True
+        else:
+            return True
