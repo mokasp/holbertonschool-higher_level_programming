@@ -39,14 +39,10 @@ class Rectangle(Base):
         y : int, optional
             y axis
         """
-        if self.hw_validator("height", height):
-            self.__height = height
-        if self.hw_validator("width", width):
-            self.__width = width
-        if self.xy_validator("x", x):
-            self.__x = x
-        if self.xy_validator("y", y):
-            self.__y = y
+        self.height = height
+        self.width = width
+        self.x = x
+        self.y = y
         super(Rectangle, self).__init__(id)
 
     @property
@@ -59,7 +55,11 @@ class Rectangle(Base):
     def height(self, value):
         """ method to set new height of the Rectangle """
 
-        if self.hw_validator("height", value):
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        elif value <= 0:
+            raise ValueError("height must be > 0")
+        else:
             self.__height = value
 
     @property
@@ -72,7 +72,11 @@ class Rectangle(Base):
     def width(self, value):
         """ method to set new width of the Rectangle """
 
-        if self.hw_validator("width", value):
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        elif value <= 0:
+            raise ValueError("width must be > 0")
+        else:
             self.__width = value
 
     @property
@@ -85,7 +89,11 @@ class Rectangle(Base):
     def x(self, value):
         """ method to set new X of the Rectangle """
 
-        if self.xy_validator("x", value):
+        if type(value) is not int:
+            raise TypeError("x must be an integer")
+        elif value < 0:
+            raise ValueError("x must be >= 0")
+        else:
             self.__x = value
 
     @property
@@ -98,39 +106,9 @@ class Rectangle(Base):
     def y(self, value):
         """ method to set new Y of the Rectangle """
 
-        if self.xy_validator("y", value):
-            self.__y = value
-
-    def hw_validator(self, name, value):
-        """ Instance Method that validates whether a value is a positive \
-        integer
-
-        parameters
-        ----------
-        name : string
-            name of value
-        value : integer
-            positive integer """
         if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        elif value <= 0:
-            raise ValueError("{} must be > 0".format(name))
-        else:
-            return True
-
-    def xy_validator(self, name, value):
-        """ Instance Method that validates whether a value is a positive \
-        integer
-
-        parameters
-        ----------
-        name : string
-            name of value
-        value : integer
-            positive integer """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
+            raise TypeError("y must be an integer")
         elif value < 0:
-            raise ValueError("{} must be <= 0".format(name))
+            raise ValueError("y must be >= 0")
         else:
-            return True
+            self.__y = value
