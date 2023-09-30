@@ -26,8 +26,6 @@ class Rectangle(Base):
     ----------
     area : int
         returns area of the Rectangle
-    display:
-        prints an instance of Rectangle
 
     """
 
@@ -126,11 +124,3 @@ class Rectangle(Base):
         """ method to get area of the Rectangle """
 
         return self.width * self.height
-
-    def display(self):
-        """ prints the Rectangle """
-
-        for row in range(self.__height):
-            for col in range(self.__width):
-                print("#", end="")
-            print()
