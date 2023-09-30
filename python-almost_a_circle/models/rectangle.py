@@ -114,7 +114,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("{} must be > than 0".format(name))
+            raise ValueError("{} must be > 0".format(name))
         return True
 
     def xy_validator(self, name, value):
@@ -130,5 +130,5 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value < 0:
-            raise ValueError("{} must be <= than 0".format(name))
+            raise ValueError("{} must be <= 0".format(name))
         return True
