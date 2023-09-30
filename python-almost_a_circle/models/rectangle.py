@@ -39,10 +39,14 @@ class Rectangle(Base):
         y : int, optional
             y axis
         """
-        self.height = height
-        self.width = width
-        self.x = x
-        self.y = y
+        if self.hw_validator("height", height):
+            self.__height = height
+        if self.hw_validator("width", width):
+            self.__width = width
+        if self.xy_validator("x", x):
+            self.__x = x
+        if self.xy_validator("y", y):
+            self.__y = y
         super(Rectangle, self).__init__(id)
 
     @property
@@ -99,8 +103,8 @@ class Rectangle(Base):
 
     def hw_validator(self, name, value):
         """ Instance Method that validates whether a value is a positive \
-        integer 
-        
+        integer
+
         parameters
         ----------
         name : string
@@ -115,8 +119,8 @@ class Rectangle(Base):
 
     def xy_validator(self, name, value):
         """ Instance Method that validates whether a value is a positive \
-        integer 
-        
+        integer
+
         parameters
         ----------
         name : string
