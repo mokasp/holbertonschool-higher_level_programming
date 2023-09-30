@@ -55,7 +55,8 @@ class Rectangle(Base):
     def height(self, value):
         """ method to set new height of the Rectangle """
 
-        self.__height = self.hw_validator("height", value)
+        if self.hw_validator("height", value):
+            self.__height = value
 
     @property
     def width(self):
@@ -67,7 +68,8 @@ class Rectangle(Base):
     def width(self, value):
         """ method to set new width of the Rectangle """
 
-        self.__width = self.hw_validator("width", value)
+        if self.hw_validator("width", value):
+            self.__width = value
 
     @property
     def x(self):
@@ -79,7 +81,8 @@ class Rectangle(Base):
     def x(self, value):
         """ method to set new X of the Rectangle """
 
-        self.__x = self.xy_validator("x", value)
+        if self.xy_validator("x", value):
+            self.__x = value
 
     @property
     def y(self):
@@ -91,7 +94,8 @@ class Rectangle(Base):
     def y(self, value):
         """ method to set new Y of the Rectangle """
 
-        self.__y = self.xy_validator("y", value)
+        if self.xy_validator("y", value):
+            self.__y = value
 
     def hw_validator(self, name, value):
         """ Instance Method that validates whether a value is a positive \
