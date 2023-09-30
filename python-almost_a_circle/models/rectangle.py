@@ -17,7 +17,7 @@ class Rectangle(Base):
         heigth of the Rectangle
 
     """
-        
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         constructs all attributes of the Rectangle
@@ -84,4 +84,3 @@ class Rectangle(Base):
         """ method to set new Y of the Rectangle """
 
         self.__y = value
-        
