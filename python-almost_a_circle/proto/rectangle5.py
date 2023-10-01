@@ -130,16 +130,10 @@ class Rectangle(Base):
     def display(self):
         """ prints the Rectangle """
 
-        for row in range(self.__y + self.__height):
-            if row < self.__y:
-                print()
-            else:
-                for col in range(self.__x + self.__width):
-                    if col < self.__x:
-                        print(" ", end="")
-                    else:
-                        print("#", end="")
-                print()
+        for row in range(self.__height):
+            for col in range(self.__width):
+                print("#", end="")
+            print()
 
     def __str__(self):
         """ returns string representation of Rectangle """
