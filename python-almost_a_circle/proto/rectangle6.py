@@ -30,8 +30,6 @@ class Rectangle(Base):
         prints an instance of Rectangle
     update :
         assigns arguments to attributes
-    to_dictionary :
-        returns dictionary representation of Rectangle
 
     """
 
@@ -173,9 +171,3 @@ class Rectangle(Base):
             if kwargs and len(kwargs) != 0:
                 for arg in kwargs:
                     setattr(self, arg, kwargs.get(arg))
-
-    def to_dictionary(self):
-        """ returns the dictionary representation of a Rectangle """
-        return {'x': getattr(self, 'x'), 'y': getattr(self, 'y'),
-                'id': getattr(self, 'id'), 'height': getattr(self, 'height'),
-                'width': getattr(self, 'width')}
