@@ -19,17 +19,6 @@ class Square(Rectangle):
         y axis
     id : int, optional
         identity of object
-
-    .....
-
-    methods
-    ----------
-    area : int
-        returns area of the Square
-    display:
-        prints an instance of Square
-    update :
-        assigns arguments to attributes
     """
     def __init__(self, size, x=0, y=0, id=None):
         """
@@ -54,13 +43,13 @@ class Square(Rectangle):
     def __str__(self):
         """ returns string representation of Square """
         return "[{}] ({:d}) {:d}/{:d} - {:d}".format(
-            self.__class__.__name__, self.id, self.x, self.y, self.size)
+            self.__class__.__name__, self.id, self.x, self.y, self.height)
 
     @property
     def size(self):
         """ method to get the current size of the Square """
 
-        return self.__size
+        return self.__width
 
     @size.setter
     def size(self, value):
@@ -71,23 +60,4 @@ class Square(Rectangle):
         elif value <= 0:
             raise ValueError("width must be > 0")
         else:
-            self.__size = value
-
-    def update(self, *args, **kwargs):
-        """ public method that assigns arguments to attributes """
-        if args is not None and len(args) != 0:
-            i = 0
-            for arg in args:
-                if i == 0:
-                    self.id = arg
-                elif i == 1:
-                    self.size = arg
-                elif i == 2:
-                    self.x = arg
-                elif i == 3:
-                    self.y = arg
-                i += 1
-        elif len(args) == 0 and kwargs is not None:
-            if kwargs and len(kwargs) != 0:
-                for arg in kwargs:
-                    setattr(self, arg, kwargs.get(arg))
+            self.__width = value
