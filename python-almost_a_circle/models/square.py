@@ -47,9 +47,9 @@ class Square(Rectangle):
         id : int, optional
             identity of Square
         """
-        super(Square, self).__init__(size, size, x, y, id)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """ returns string representation of Square """
-        return "[Square] ({}) {}/{} - {}".format(
-            self.id, self.x, self.y, self.width)
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(
+            self.id, self.x, self.y, self.height)
