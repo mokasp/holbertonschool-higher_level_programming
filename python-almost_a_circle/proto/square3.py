@@ -30,8 +30,6 @@ class Square(Rectangle):
         prints an instance of Square
     update :
         assigns arguments to attributes
-    to_dictionary :
-        returns dictionary representation of Square
     """
     def __init__(self, size, x=0, y=0, id=None):
         """
@@ -93,8 +91,3 @@ class Square(Rectangle):
             if kwargs and len(kwargs) != 0:
                 for arg in kwargs:
                     setattr(self, arg, kwargs.get(arg))
-
-    def to_dictionary(self):
-        """ returns the dictionary representation of a Square """
-        return {'id': getattr(self, 'id'), 'x': getattr(self, 'x'),
-                'size': getattr(self, 'size'), 'y': getattr(self, 'y')}
