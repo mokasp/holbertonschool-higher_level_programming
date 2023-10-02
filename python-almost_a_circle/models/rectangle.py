@@ -164,3 +164,10 @@ class Rectangle(Base):
                 elif i == 4:
                     self.y = arg
                 i += 1
+
+    def update(self, *args, **kwargs):
+        """ public method that assigns a key/value argument to attributes """
+        if len(args) == 0:
+            if kwargs and len(kwargs) != 0:
+                for arg in kwargs:
+                    setattr(self, arg, kwargs.get(arg))
