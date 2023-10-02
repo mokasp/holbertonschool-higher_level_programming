@@ -28,7 +28,7 @@ class Rectangle(Base):
         returns area of the Rectangle
     display:
         prints an instance of Rectangle
-    method :
+    update :
         assigns arguments to attributes
 
     """
