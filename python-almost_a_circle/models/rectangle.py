@@ -28,6 +28,8 @@ class Rectangle(Base):
         returns area of the Rectangle
     display:
         prints an instance of Rectangle
+    method :
+        assigns arguments to attributes
 
     """
 
@@ -145,3 +147,20 @@ class Rectangle(Base):
         """ returns string representation of Rectangle """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """ public method that assigns arguments to attributes """
+        if args and len(args) != 0:
+            i = 0
+            for arg in args:
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
+                i += 1
