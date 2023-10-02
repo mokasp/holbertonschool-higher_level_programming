@@ -17,18 +17,8 @@ class Square(Rectangle):
         x axis
     y : int, optional
         y axis
-
-    .....
-
-    methods
-    ----------
-    area : int
-        returns area of the Square
-    display:
-        prints an instance of Square
-    update :
-        assigns arguments to attributes
-
+    id : int, optional
+        identity of object
     """
     def __init__(self, size, x=0, y=0, id=None):
         """
