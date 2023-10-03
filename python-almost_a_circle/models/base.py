@@ -47,10 +47,9 @@ class Base:
         if list_objs is None or len(list_objs) == 0:
             with open(filename, "w") as write_file:
                 write_file.write(new_list)
-        else:
-            for item in list_objs:
-                my_obj = item.to_dictionary()
-                new_list.append(my_obj)
-            the_obj = cls.to_json_string(new_list)
-            with open(filename, "w") as write_file:
-                write_file.write(the_obj)
+        for item in list_objs:
+            my_obj = item.to_dictionary()
+            new_list.append(my_obj)
+        the_obj = cls.to_json_string(new_list)
+        with open(filename, "w") as write_file:
+            write_file.write(the_obj)
