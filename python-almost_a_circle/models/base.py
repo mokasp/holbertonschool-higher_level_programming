@@ -44,12 +44,13 @@ class Base:
     """
         filename = f"{cls.__name__}.json"
         new_list = []
-        if list_objs is None or len(list_objs) == 0:
+        if list_objs is None:
             with open(filename, "w") as write_file:
-                write_file.write(new_list)
-        for item in list_objs:
-            my_obj = item.to_dictionary()
-            new_list.append(my_obj)
-        the_obj = cls.to_json_string(new_list)
-        with open(filename, "w") as write_file:
-            write_file.write(the_obj)
+                write_file.write("[]")
+        else:
+            for item in list_objs:
+                my_obj = item.to_dictionary()
+                new_list.append(my_obj)
+            the_obj = cls.to_json_string(new_list)
+            with open(filename, "w") as write_file:
+                write_file.write(the_obj)
