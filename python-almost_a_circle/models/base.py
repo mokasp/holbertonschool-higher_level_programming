@@ -64,5 +64,5 @@ class Base:
             json string to convert to object
         """
         if json_string is None:
-            return "[]"
+            return []
         return json.loads(json_string)
