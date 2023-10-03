@@ -54,15 +54,3 @@ class Base:
             the_obj = cls.to_json_string(new_list)
             with open(filename, "w") as write_file:
                 write_file.write(the_obj)
-
-    def from_json_string(json_string):
-        """ function that converts JSON string to object
-
-        parameters
-        ==========
-        json_string : JSON string
-            json string to convert to object
-        """
-        if json_string is None:
-            return "[]"
-        return json.loads(json_string)
