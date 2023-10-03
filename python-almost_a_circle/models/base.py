@@ -76,6 +76,9 @@ class Base:
             dictionary : dict
                 dictionary containing attributes for new object
         """
-        dummy = cls(1, 1)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        else:
+            dummy = cls(1, 2)
         dummy.update(**dictionary)
         return dummy
