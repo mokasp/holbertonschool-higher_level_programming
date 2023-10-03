@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ module containing a class Base to create shapes """
 import json
+import os
 
 
 class Base:
@@ -55,6 +56,7 @@ class Base:
             with open(filename, "w") as write_file:
                 write_file.write(the_obj)
 
+    @staticmethod
     def from_json_string(json_string):
         """ function that converts JSON string to object
 
@@ -82,3 +84,17 @@ class Base:
             dummy = cls(1, 2)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ class method that returns a list of instances """
+        filename = f"{cls.__name__}.json"
+        if os.path.exists(filename):
+            with open(filename, "r") as read_file:
+                instances = json.load(read_file)
+            new_instances = []
+            for item in instances:
+                new_instances.append(cls.create(**item))
+            return new_instances
+        else:
+            return []
