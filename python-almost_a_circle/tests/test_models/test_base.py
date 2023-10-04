@@ -42,9 +42,20 @@ class TestBase(unittest.TestCase):
         self.assertEqual(self.base_2.id, 50)
         self.assertEqual(self.base_3.id, 2)
 
-
-    def test_toJsonString(self):
+    #tests for tast 15 To Json String
+    def test_toJsonstringOutput_Normal(self):
         self.r1 = Rectangle(10, 7, 2, 8)
         dictionary = self.r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(json_dictionary, '[{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}]')
+
+    def test_toJsonstringType(self):
+        self.r1 = Rectangle(10, 7, 2, 8)
+        dictionary = self.r1.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertIsInstance(json_dictionary, str)
+
+    def test_toJsonstringNone(self):
+        self.r1 = Rectangle(10, 7, 2, 8)
+        json_dictionary = Base.to_json_string(None)
+        self.assertEqual(json_dictionary, "[]")

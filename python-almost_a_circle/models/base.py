@@ -61,8 +61,8 @@ class Base:
             list_dictionaries - list
                 list of dictionaries of attributes for object
         """
-        if list_dictionaries is None and len(list_dictionaries) != 0:
-            return "[]"
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return '[]'
         else:
             return json.dumps(list_dictionaries)
 
