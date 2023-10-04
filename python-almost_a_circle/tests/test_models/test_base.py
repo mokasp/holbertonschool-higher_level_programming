@@ -2,6 +2,8 @@
 """ unittest for Base """
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 import json
 
 class TestBase(unittest.TestCase):
@@ -39,3 +41,10 @@ class TestBase(unittest.TestCase):
         self.assertEqual(self.base_1.id, 1)
         self.assertEqual(self.base_2.id, 50)
         self.assertEqual(self.base_3.id, 2)
+
+
+    def test_toJsonString(self):
+        self.r1 = Rectangle(10, 7, 2, 8)
+        dictionary = self.r1.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertEqual(json_dictionary, '[{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}]')
