@@ -169,7 +169,7 @@ class Rectangle(Base):
         elif len(args) == 0:
             if kwargs and len(kwargs) != 0:
                 for arg in kwargs:
-                    setattr(self, arg, kwargs.get(arg))                
+                    setattr(self, arg, kwargs.get(arg))
 
     def to_dictionary(self):
         """ returns the dictionary representation of a Rectangle """
