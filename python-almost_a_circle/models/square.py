@@ -66,7 +66,13 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
-        """ method to set new size of the Square """
+        """ method to set new size of the square
+
+            parameters
+            ==========
+            value : pos int
+                value to set for size
+        """
 
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -76,7 +82,15 @@ class Square(Rectangle):
             self.__size = value
 
     def update(self, *args, **kwargs):
-        """ public method that assigns arguments to attributes """
+        """ public method that assigns arguments to attributes
+
+            parameters
+            ==========
+            *args - tuple
+                tuple containing new attributes to set
+            **kwargs - dictionary
+                dictionary containing new attributes to set
+        """
         if args is not None and len(args) != 0:
             i = 0
             for arg in args:
