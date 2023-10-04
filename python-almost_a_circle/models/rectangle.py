@@ -5,11 +5,11 @@ from models.base import Base
 
 class Rectangle(Base):
     """
-    a class used to represent a Rectangle
+    a class used to represent a Rectangle inherited from Base
 
     .....
 
-    attributes
+    Instance Attributes
     ----------
     width : int, optional
         width of the Rectangle
@@ -22,8 +22,8 @@ class Rectangle(Base):
 
     .....
 
-    methods
-    ----------
+    Instance Methods
+    -------
     area : int
         returns area of the Rectangle
     display:
@@ -36,21 +36,22 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """
-        constructs all attributes of the Rectangle
+        """ constructs all attributes of the Rectangle
 
-        .....
+            .....
 
-        parameters
-        ----------
-        width : int, optional
-            width of the Rectangle
-        height : int, optional
-            heigth of the Rectangle
-        x : int, optional
-            x axis
-        y : int, optional
-            y axis
+            parameters
+            ----------
+            width : int, optional
+                width of the Rectangle
+            height : int, optional
+                heigth of the Rectangle
+            x : int, optional
+                x axis
+            y : int, optional
+                y axis
+            id : int, optional
+                identity of the Rectangle object
         """
         self.height = height
         self.width = width
@@ -66,7 +67,13 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """ method to set new height of the Rectangle """
+        """ method to set new height of the Rectangle
+
+            parameters
+            ==========
+            value : pos int
+                value to set for height
+        """
 
         if type(value) is not int:
             raise TypeError("height must be an integer")
@@ -83,7 +90,13 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        """ method to set new width of the Rectangle """
+        """ method to set new width of the Rectangle
+
+            parameters
+            ==========
+            value : pos int
+                value to set for width
+        """
 
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -100,7 +113,13 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        """ method to set new X of the Rectangle """
+        """ method to set new X of the Rectangle
+
+            parameters
+            ==========
+            value : pos int
+                value to set for x axis
+        """
 
         if type(value) is not int:
             raise TypeError("x must be an integer")
@@ -117,7 +136,13 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """ method to set new Y of the Rectangle """
+        """ method to set new Y of the Rectangle
+
+            parameters
+            ==========
+            value : pos int
+                value to set for y axis
+        """
 
         if type(value) is not int:
             raise TypeError("y must be an integer")
@@ -151,7 +176,15 @@ class Rectangle(Base):
             self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
-        """ public method that assigns arguments to attributes """
+        """ public method that assigns arguments to attributes
+
+            parameters
+            ==========
+            *args - tuple
+                tuple containing new attributes to set
+            **kwargs - dictionary
+                dictionary containing new attributes to set
+        """
         if args and len(args) != 0:
             i = 0
             for arg in args:
