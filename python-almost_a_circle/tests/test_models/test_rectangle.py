@@ -6,4 +6,23 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
-    pass
+
+    def setUp(self):
+        Base._Base__nb_objects = 0
+
+    def tearDown(self):
+        pass
+
+    def test_createRectangle(self):
+        self.rect_1 = Rectangle(2, 3)
+        self.assertEqual(self.rect_1.id, 1)
+        self.assertEqual(self.rect_1.width, 2)
+        self.assertEqual(self.rect_1.height, 3)
+
+    def test_ConseqId(self):
+        self.rect_1 = Rectangle(2, 3)
+        self.rect_2 = Rectangle(2, 3)
+        self.rect_3 = Rectangle(2, 3)
+        self.assertEqual(self.rect_1.id, 1)
+        self.assertEqual(self.rect_2.id, 2)
+        self.assertEqual(self.rect_3.id, 3)
