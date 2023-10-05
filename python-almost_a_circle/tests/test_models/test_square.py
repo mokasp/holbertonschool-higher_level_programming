@@ -24,7 +24,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.square_1.size, 2)
         self.assertEqual(self.square_1.x, 0)
         self.assertEqual(self.square_1.y, 0)
-    
+
     def test_createSquare2(self):
         """ check more complex square creation """
         self.square_1 = Square(3, 1, 2, 12)
