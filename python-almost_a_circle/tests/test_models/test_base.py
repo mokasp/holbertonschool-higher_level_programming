@@ -56,8 +56,8 @@ class TestBase(unittest.TestCase):
         self.r1 = Rectangle(10, 7, 2, 8)
         dictionary = self.r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
-        self.assertEqual(json_dictionary, '[{"x": 2, "y": 8, "id": 1, \
-                        "height": 7, "width": 10}]')
+        output = '[{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}]'
+        self.assertEqual(json_dictionary, output)
 
     def test_toJsonstringType(self):
         """ check output type """
