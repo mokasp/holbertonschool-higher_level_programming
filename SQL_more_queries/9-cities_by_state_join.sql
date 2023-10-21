@@ -1,0 +1,5 @@
+-- SQL script that joins cities and states tables (inner join)
+SELECT cities.id, cities.name, states.name
+FROM cities
+    INNER JOIN states ON states.id = cities.state_id
+ORDER BY cities.id;
