@@ -11,8 +11,8 @@ def main():
                            user=f"{sys.argv[1]}", passwd=f"{sys.argv[2]}",
                            db=f"{sys.argv[3]}", charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name REGEXP '^[N]' \
-                ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name REGEXP '^N' \
+                ORDER BY states.id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
