@@ -5,12 +5,14 @@ import sys
 
 
 def main():
-    """ function that connects to SQL database and prints list of states"""
+    """ function that connects to SQL database and prints list \
+        of states that start with N"""
     conn = MySQLdb.connect(host="localhost", port=3306,
                            user=f"{sys.argv[1]}", passwd=f"{sys.argv[2]}",
                            db=f"{sys.argv[3]}", charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name REGEXP '^[n]' ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name REGEXP '^[n]' \
+                ORDER BY id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
