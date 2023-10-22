@@ -23,7 +23,8 @@ def main(un, pw, db_name, state_name):
             if i < len(query_rows):
                 print(f"{col}, ", end="")
             else:
-                print(col)
+                print(col, end="")
+    print("")
     cur.close()
     conn.close()
 
