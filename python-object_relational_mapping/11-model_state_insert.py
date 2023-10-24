@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" module that connects to SQL server and adds object Louisiana to table States"""
+""" module that connects to SQL server and adds object Louisiana to table
+States"""
 import sys
 from model_state import Base, State
 
@@ -16,7 +17,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_state = State(name = 'Louisiana')
+    new_state = State(name='Louisiana')
     session.add(new_state)
     session.commit()
     state = session.query(State).filter(State.name.like('Louisiana')).one()
