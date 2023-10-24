@@ -18,6 +18,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for state, city in session.query(State, City).filter(State.id == City.state_id).order_by(City.id).all():
+    qry = session.query(State, City)
+    filtered = qry.filter(State.id == City.state_id).order_by(City.id).all()
+    for state, city in filtered:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
     session.close()
