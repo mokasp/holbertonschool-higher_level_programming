@@ -6,6 +6,7 @@ from model_state import Base, State
 
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import (sessionmaker)
+from sqlalchemy import exc
 
 
 if __name__ == "__main__":
@@ -20,6 +21,6 @@ if __name__ == "__main__":
     try:
         state = session.query(State).filter(State.name.like(sys.argv[4])).one()
         print("{}".format(state.id))
-    except AttributeError:
+    except exc.NoResultFound:
         print("Not found")
     session.close()
