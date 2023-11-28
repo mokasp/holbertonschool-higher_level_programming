@@ -9,5 +9,5 @@ for (const i of args) { // eslint-disable-line no-unused-vars
 if (count === 0) {
   console.log('No argument');
 } else {
-    console.log(args[0]);
+  console.log(args[0]);
 }
