@@ -1,11 +1,13 @@
 #!/usr/bin/node
 const x = process.argv[2];
 let row = []
-for (var i = 0; i < x; i++){ // iterates rows
-    for (var j = 0; j < x; j++) // iterates * in row
+for (let i = 0; i < x; i++){ 
+    for (let j = 0; j < x; j++)
         row.push('X')
     if (i < x - 1) {
         row.push('\n')
     }
 }
-console.log(row.join(""))
+if (x > 0) { 
+    console.log(row.join(""))
+}
