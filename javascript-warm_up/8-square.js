@@ -1,6 +1,8 @@
 #!/usr/bin/node
-const x = process.argv[2];
-if (Number.isInteger(x)) {
+const x = parseInt(process.argv[2]);
+if (isNaN(x)) {
+  console.log('Missing size');
+} else {
   const row = [];
   for (let i = 0; i < x; i++) {
     for (let j = 0; j < x; j++) { row.push('X'); }
@@ -11,6 +13,4 @@ if (Number.isInteger(x)) {
   if (x > 0) {
     console.log(row.join(''));
   }
-} else {
-  console.log('Missing size');
 }
