@@ -10,13 +10,11 @@ class Rectangle {
   print () {
     const row = [];
     for (let i = 0; i < this.height; i++) {
-      if (i < this.height) {
-        for (let j = 0; j < this.width; j++) { row.push('X'); }
-        if (i < this.width - 1) {
-          row.push('\n');
+        for (let j = 0; j < this.width; j++) {
+          row.push('X');
         }
+        row.push('\n');
       }
-    }
     console.log(row.join(''));
   }
 }
