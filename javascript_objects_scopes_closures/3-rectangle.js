@@ -12,7 +12,7 @@ class Rectangle {
     for (let i = 0; i < this.height; i++) {
       if (i < this.height) {
         for (let j = 0; j < this.width; j++) { row.push('X'); }
-        if (i < this.width) {
+        if (i < this.width - 1) {
           row.push('\n');
         }
       }
