@@ -7,6 +7,6 @@ if (length === 0) {
 } else if (length === 1) {
   console.log(0);
 } else {
-  args.sort();
+  args.sort(function(a, b){return a-b});
   console.log(args[length - 2]);
 }
