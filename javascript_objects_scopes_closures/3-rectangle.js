@@ -13,7 +13,9 @@ class Rectangle {
         for (let j = 0; j < this.width; j++) {
           row.push('X');
         }
-        row.push('\n');
+        if (i < this.height - 1) {
+          row.push('\n');
+        }
       }
     console.log(row.join(''));
   }
