@@ -7,8 +7,9 @@ const url = args[0]
 request(url, function (error, response, body) {
     let parsedJson = JSON.parse(body);
     let filmList = []
+    let peopleUrl = url.slice(0, -5)
     for (let film of parsedJson.results) {
-        if (film.characters.includes("https://swapi-api.hbtn.io/api/people/18/")) {
+        if (film.characters.includes(`${peopleUrl}people/18/`)) {
             filmList.push(film.title)
         }
     }
