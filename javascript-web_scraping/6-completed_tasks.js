@@ -8,10 +8,8 @@ request(url, function (error, response, body) {
     let parsedJson = JSON.parse(body);
     let the_dict = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
     for (let entry of parsedJson) {
-        if (!(entry.userId in the_dict)) {
-            if (entry.completed === true) {
+        if (!(entry.userId in the_dict) && (entry.completed === true)) {
             the_dict[entry.userId] = 0
-            }
         }
         if (entry.completed === true) {
             the_dict[entry.userId] += 1
