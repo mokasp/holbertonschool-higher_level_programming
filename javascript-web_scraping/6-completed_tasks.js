@@ -4,7 +4,10 @@ args.splice(0, 2);
 const request = require('request');
 const url = args[0];
 
-request(url, function (body) {
+request(url, function (error, body) {
+  if (error) {
+    console.log(error.stack);
+  }
   const parsedJson = JSON.parse(body);
   const theDict = {};
   for (const entry of parsedJson) {
